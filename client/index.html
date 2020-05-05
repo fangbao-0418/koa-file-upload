@@ -1,0 +1,60 @@
+<!--
+ * @Author: fangbao
+ * @Date: 2020-05-05 23:00:22
+ * @LastEditors: fangbao
+ * @LastEditTime: 2020-05-06 00:11:02
+ * @FilePath: /eslint-plugin-xt-react/Users/fb/Documents/xituan/file-upload/client/index.html
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <input
+    type="file"
+  >
+  <script>
+    function http (url, mothod, data) {
+      const p = new Promise((resolve, reject) => {
+        const xhr = new XMLHttpRequest()
+        xhr.open(mothod, url)
+        console.log(arguments, 'onchange')
+          xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4) {
+              resolve()
+            }
+            console.log(arguments, xhr.status, xhr.readyState, 'onreadystatechange')
+          }
+        xhr.send(data)
+      })
+      return p
+    }
+    // (function () {
+    //   const form = new FormData()
+    //   const blob = new Blob(['hello world'])
+    //   const blob2 = new Blob(['I`m iron man'])
+    //   form.append('file', blob)
+    //   form.append('file2', blob2)
+    //   form.append('name', 'fangbao')
+    //   http('/api/upload', 'POST', form)
+    // })()
+    // http('/api/userInfo', 'POST')
+  </script>
+  <script>
+    (function () {
+      const el = document.querySelector('input[type="file"]')
+      console.log(el, 'el')
+      el.onchange = function () {
+        console.log(el.files[0], 'files')
+        const file = el.files[0]
+        const data = new FormData()
+        data.append('file', file)
+        http('/api/upload', 'POST', data)
+      }
+    })()
+  </script>
+</body>
+</html>

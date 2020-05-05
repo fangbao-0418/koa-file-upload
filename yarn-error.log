@@ -1,0 +1,41 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/bin/yarn add koa
+
+PATH: 
+  /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/Wireshark.app/Contents/MacOS
+
+Yarn version: 
+  1.5.1
+
+Node version: 
+  10.16.0
+
+Platform: 
+  darwin x64
+
+npm manifest: 
+  {
+    "name": "file-upload",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: registry.npm.taobao.org/koa: Invalid URI "registry.npm.taobao.org/koa"
+      at Request.module.exports.Request.init (/usr/local/lib/node_modules/yarn/lib/cli.js:132518:31)
+      at new Request (/usr/local/lib/node_modules/yarn/lib/cli.js:132372:8)
+      at request (/usr/local/lib/node_modules/yarn/lib/cli.js:129371:10)
+      at RequestManager.execute (/usr/local/lib/node_modules/yarn/lib/cli.js:65071:15)
+      at RequestManager.shiftQueue (/usr/local/lib/node_modules/yarn/lib/cli.js:65098:10)
+      at /usr/local/lib/node_modules/yarn/lib/cli.js:64849:13
+      at new Promise (<anonymous>)
+      at new F (/usr/local/lib/node_modules/yarn/lib/cli.js:23451:28)
+      at RequestManager.request (/usr/local/lib/node_modules/yarn/lib/cli.js:64847:19)
+      at NpmRegistry.request (/usr/local/lib/node_modules/yarn/lib/cli.js:31136:32)
